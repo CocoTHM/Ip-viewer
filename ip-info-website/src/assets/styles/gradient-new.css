@@ -1,0 +1,111 @@
+/* Configuration des couleurs du dégradé */
+:root {
+    --gradient-color-1: #0A2463;
+    --gradient-color-2: #3E92CC;
+    --gradient-color-3: #6FDFDF;
+    --gradient-color-4: #2C7BB8;
+}
+
+body {
+    background: transparent !important;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Style du fond en dégradé */
+.gradient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(
+        -45deg,
+        var(--gradient-color-1),
+        var(--gradient-color-2),
+        var(--gradient-color-3),
+        var(--gradient-color-4)
+    ) !important;
+    background-size: 400% 400% !important;
+    animation: gradientMove 20s ease-in-out infinite !important;
+}
+
+/* Animation du dégradé */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Style du contenu principal */
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+/* Effet de particules brillantes */
+.gradient-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFloat 20s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+        opacity: 0;
+    }
+}
+
+/* Ajout d'un effet de lueur */
+.gradient-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* Style pour le contenu avec effet de verre */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}

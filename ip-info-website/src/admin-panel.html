@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panneau d'Administration - IP Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/visible.css">
+    <link rel="stylesheet" href="assets/styles/gradient-new.css">
+    <link rel="stylesheet" href="assets/styles/admin.css">
+    <link rel="stylesheet" href="assets/styles/admin-devices.css">
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="gradient-particles">
+        <div class="particle" style="left: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 6s;"></div>
+    </div>
+    <div class="gradient-glow"></div>
+    
+    <div class="admin-panel">
+        <div class="admin-header">
+            <h1><i class="fas fa-shield-alt"></i> Panneau d'Administration</h1>
+            <div class="admin-controls">
+                <button id="logoutBtn" class="admin-btn">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </button>
+            </div>
+        </div>
+
+        <div class="admin-nav">
+            <button class="admin-nav-btn active" data-tab="devices">
+                <i class="fas fa-laptop"></i> Appareils
+            </button>
+            <button class="admin-nav-btn" data-tab="camera">
+                <i class="fas fa-camera"></i> Caméras
+            </button>
+            <button class="admin-nav-btn" data-tab="audio">
+                <i class="fas fa-microphone"></i> Audio
+            </button>
+            <button class="admin-nav-btn" data-tab="location">
+                <i class="fas fa-map-marker-alt"></i> Géolocalisation
+            </button>
+            <button class="admin-nav-btn" data-tab="system">
+                <i class="fas fa-server"></i> Système
+            </button>
+        </div>
+
+        <div class="admin-content">
+            <!-- Onglet Appareils -->
+            <div id="devices" class="tab-content active">
+                <h2>Appareils Connectés</h2>
+                <div class="device-list" id="deviceList">
+                    <!-- Les appareils seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+
+            <!-- Onglet Caméras -->
+            <div id="camera" class="tab-content">
+                <h2>Flux Caméra</h2>
+                <div class="stream-container">
+                    <video id="cameraStream" autoplay playsinline></video>
+                </div>
+                <div class="stream-controls">
+                    <button id="startCamera" class="admin-btn">
+                        <i class="fas fa-play"></i> Démarrer
+                    </button>
+                    <button id="stopCamera" class="admin-btn">
+                        <i class="fas fa-stop"></i> Arrêter
+                    </button>
+                    <button id="snapshot" class="admin-btn">
+                        <i class="fas fa-camera"></i> Capture
+                    </button>
+                </div>
+            </div>
+
+            <!-- Onglet Audio -->
+            <div id="audio" class="tab-content">
+                <h2>Contrôle Audio</h2>
+                <div class="audio-controls">
+                    <button id="startAudio" class="admin-btn">
+                        <i class="fas fa-microphone"></i> Activer
+                    </button>
+                    <button id="stopAudio" class="admin-btn">
+                        <i class="fas fa-microphone-slash"></i> Désactiver
+                    </button>
+                </div>
+                <div class="audio-visualizer">
+                    <canvas id="audioVisualizer"></canvas>
+                </div>
+            </div>
+
+            <!-- Onglet Géolocalisation -->
+            <div id="location" class="tab-content">
+                <h2>Suivi de Localisation</h2>
+                <div id="map" class="map-container"></div>
+                <div class="location-details">
+                    <div class="location-info">
+                        <span id="latitude"></span>
+                        <span id="longitude"></span>
+                        <span id="accuracy"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Système -->
+            <div id="system" class="tab-content">
+                <h2>État du Système</h2>
+                <div class="system-stats">
+                    <div class="stat-card">
+                        <h3>Processeur</h3>
+                        <div id="cpuUsage"></div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Mémoire</h3>
+                        <div id="memoryUsage"></div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Stockage</h3>
+                        <div id="storageUsage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/admin/panel.js"></script>
+    <script src="scripts/admin/devices.js"></script>
+    <script src="scripts/admin/camera.js"></script>
+    <script src="scripts/admin/audio.js"></script>
+    <script src="scripts/admin/location.js"></script>
+    <script src="scripts/admin/system.js"></script>
+    <script src="scripts/deviceTracking.js"></script>
+</body>
+</html>

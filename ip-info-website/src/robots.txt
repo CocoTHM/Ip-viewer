@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Bloque tous les robots d'indexation. Supprimez ou modifiez si vous voulez autoriser l'indexation.

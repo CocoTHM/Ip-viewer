@@ -1,0 +1,38 @@
+/* Reset de tous les styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Suppression des fonds blancs des éléments HTML standards */
+div:not(.gradient-bg), section, article, aside, main, header, footer, nav {
+    background: transparent;
+}
+
+/* Ajustement des conteneurs principaux */
+.container, 
+.content-wrapper,
+.main-content,
+.card-container {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Empêcher les fonds blancs sur les éléments interactifs */
+button, input, select, textarea {
+    background: transparent !important;
+}
+
+/* Assurer que les fonds restent transparents même avec les pseudo-éléments */
+*::before,
+*::after {
+    background: transparent !important;
+}

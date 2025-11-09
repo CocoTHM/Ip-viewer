@@ -1,0 +1,81 @@
+.permission-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, #6FDFDF, #88D8B0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(111, 223, 223, 0.2);
+}
+
+.permission-btn:hover {
+    background: linear-gradient(135deg, #88D8B0, #6FDFDF);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(111, 223, 223, 0.3);
+}
+
+#checkCamera {
+    background: linear-gradient(135deg, #FF9A8B, #FF6B6B);
+    box-shadow: 0 4px 6px rgba(255, 154, 139, 0.2);
+}
+
+#checkCamera:hover {
+    background: linear-gradient(135deg, #FF6B6B, #FF9A8B);
+    box-shadow: 0 6px 8px rgba(255, 154, 139, 0.3);
+}
+
+#checkMicrophone {
+    background: linear-gradient(135deg, #88D8B0, #96CEB4);
+    box-shadow: 0 4px 6px rgba(136, 216, 176, 0.2);
+}
+
+#checkMicrophone:hover {
+    background: linear-gradient(135deg, #96CEB4, #88D8B0);
+    box-shadow: 0 6px 8px rgba(136, 216, 176, 0.3);
+}
+
+#checkLocation {
+    background: linear-gradient(135deg, #45B7D1, #4ECDC4);
+    box-shadow: 0 4px 6px rgba(69, 183, 209, 0.2);
+}
+
+#checkLocation:hover {
+    background: linear-gradient(135deg, #4ECDC4, #45B7D1);
+    box-shadow: 0 6px 8px rgba(69, 183, 209, 0.3);
+}
+
+.card-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.info-row {
+    display: flex;
+    margin: 0.75rem 0;
+    padding: 0.75rem;
+    background: rgba(111, 223, 223, 0.05);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid #6FDFDF;
+}
+
+.info-row:hover {
+    background: rgba(111, 223, 223, 0.1);
+    transform: translateX(5px);
+}

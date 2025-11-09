@@ -1,0 +1,135 @@
+/* Styles pour la table des appareils */
+.devices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.devices-table th,
+.devices-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.devices-table thead {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.devices-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+.devices-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Statut des périphériques */
+.device-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.device-status.active {
+    color: #2ecc71;
+}
+
+.device-status.inactive {
+    color: #e74c3c;
+}
+
+/* Boutons d'action */
+.btn-details {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: var(--gradient-color-2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+    background: var(--gradient-color-3);
+    transform: translateY(-1px);
+}
+
+/* Modal des détails */
+.device-details {
+    padding: 20px;
+}
+
+.device-details h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 5px;
+}
+
+.device-peripherals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.peripheral-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+}
+
+.peripheral-item i {
+    font-size: 1.2em;
+}
+
+.peripheral-item i.active {
+    color: #2ecc71;
+}
+
+.peripheral-item i.inactive {
+    color: #e74c3c;
+}
+
+/* Filtres et recherche */
+.devices-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.devices-search {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    background: var(--card-bg);
+}
+
+.devices-filter-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.devices-filter-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}

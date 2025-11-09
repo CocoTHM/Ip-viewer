@@ -1,0 +1,207 @@
+/* Variables de base */
+:root {
+    --text-primary: #000000;
+    --text-secondary: rgba(0, 0, 0, 0.8);
+    --text-shadow: none;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --highlight: rgba(0, 0, 0, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* Style général */
+body {
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: transparent !important;
+}
+
+main, .container, .gradient-bg {
+    background: transparent !important;
+}
+
+.card, .admin-content, .modal-content {
+    background: var(--card-bg) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+/* Style des sections */
+.card {
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-light);
+    position: relative;
+    border-left: 3px solid var(--border-light);
+}
+
+/* En-têtes avec fond pour meilleure lisibilité */
+h1, h2, h3 {
+    color: var(--text-primary);
+    text-shadow: var(--text-shadow);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.2),
+        transparent
+    );
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Style des informations */
+.info-row {
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.15),
+        transparent
+    );
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--border-light);
+}
+
+.info-row:hover {
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    transform: translateX(10px);
+    border-left-color: var(--highlight);
+}
+
+.info-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex: 0 0 40%;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-shadow: var(--text-shadow);
+    text-align: right;
+    flex: 1;
+}
+
+/* Style des icônes */
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-shadow: var(--text-shadow);
+    display: inline-block;
+    background: linear-gradient(135deg, 
+        var(--highlight),
+        rgba(255, 255, 255, 0.5)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Boutons avec meilleur contraste */
+.permission-btn, .admin-btn {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: var(--text-shadow);
+}
+
+.permission-btn:hover, .admin-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--highlight);
+    transform: translateY(-2px);
+}
+
+/* Navigation */
+.admin-nav {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.admin-nav-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: var(--text-shadow);
+}
+
+.admin-nav-btn.active, .admin-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--highlight);
+}
+
+/* Style des entrées de formulaire */
+input, select, textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--highlight);
+    outline: none;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .info-value {
+        width: 100%;
+        text-align: left;
+    }
+
+    .info-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease forwards;
+}

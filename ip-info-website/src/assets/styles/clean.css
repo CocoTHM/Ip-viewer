@@ -1,0 +1,197 @@
+/* Reset complet des styles pour enlever tous les fonds */
+:root {
+    --text-color: #ffffff;
+    --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --border-glow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+body {
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Style des cartes sans fond */
+.card {
+    padding: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Style des en-têtes */
+h1, h2, h3 {
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+}
+
+/* Style des lignes d'information */
+.info-row {
+    padding: 12px 0;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-row:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(10px);
+}
+
+.info-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: var(--text-shadow);
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+}
+
+/* Style des icônes */
+.card-icon {
+    font-size: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+}
+
+/* Style des boutons */
+.permission-btn, .admin-btn {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 8px;
+    text-shadow: var(--text-shadow);
+}
+
+.permission-btn:hover, .admin-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: var(--border-glow);
+}
+
+/* Style de la navigation */
+.admin-nav {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.admin-nav-btn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-btn.active {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--border-glow);
+}
+
+/* Style des entrées de formulaire */
+input, select, textarea {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+    box-shadow: var(--border-glow);
+}
+
+/* Effets de survol et animations */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styles pour le responsive */
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .info-value {
+        width: 100%;
+        text-align: left;
+    }
+
+    .admin-nav {
+        flex-direction: column;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease forwards;
+}
